@@ -76,7 +76,8 @@ export default async function middleware(req: NextRequest) {
 
   const user = {
     name: token,
-    encrypted: await encrypt(token)
+    encrypted: token
+    // encrypted: await encrypt(token)
   }
 
   const url = req.nextUrl.clone()
