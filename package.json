@@ -4,7 +4,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "serve-notes": "json-server -p 3001 ./db.json"
   },
   "dependencies": {
     "@types/node": "^20.8.9",
@@ -12,6 +13,7 @@
     "@vercel/kv": "^0.2.3",
     "cheerio": "1.0.0-rc.12",
     "date-fns": "^2.30.0",
+    "json-server": "^1.0.0-alpha.23",
     "marked": "^1.2.9",
     "ms": "2.1.3",
     "next": "^14.1.0",

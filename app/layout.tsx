@@ -1,9 +1,9 @@
 import './style.css'
 
 import React from 'react'
-import { kv } from '@vercel/kv'
 import Sidebar from 'components/sidebar'
 import AuthButton from 'components/auth-button'
+import * as notesService from "../libs/notes-service";
 
 export const metadata = {
   title: 'Next.js App Router + React Server Components Demo',
@@ -34,7 +34,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const notes = await kv.hgetall('notes')
+  const notes = await notesService.getNotes();
   let notesArray: Note[] = notes
     ? (Object.values(notes) as Note[]).sort(
         (a, b) => Number(a.id) - Number(b.id)

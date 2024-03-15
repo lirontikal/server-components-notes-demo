@@ -1,7 +1,7 @@
-import { kv } from '@vercel/kv'
 import { cookies } from 'next/headers'
 import { getUser, userCookieKey } from 'libs/session'
 import NoteUI from 'components/note-ui'
+import * as notesService from "../../../../libs/notes-service";
 
 export const metadata = {
   robots: {
@@ -19,7 +19,7 @@ export default async function EditPage({ params }: { params: { id: string } }) {
   const userCookie = cookieStore.get(userCookieKey)
   const user = getUser(userCookie?.value)
 
-  const note = await kv.hget<Note>('notes', params.id)
+  const note = await notesService.getNote(params.id)
   const isCreator = note?.created_by === user || true
 
   if (note === null) {

@@ -1,0 +1,18 @@
+{
+  "notes": [
+    {
+      "id": "1710505897412",
+      "title": "test 1",
+      "updated_at": 1710506831306,
+      "body": "test 1",
+      "created_by": "lirontikal"
+    },
+    {
+      "id": "1710506772701",
+      "title": "test 2",
+      "updated_at": 1710506802534,
+      "body": "test 2",
+      "created_by": "lirontikal"
+    }
+  ]
+}
