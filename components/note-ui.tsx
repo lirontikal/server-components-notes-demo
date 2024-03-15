@@ -36,13 +36,8 @@ export default function NoteUI({ note, isEditing }) {
               className="avatar"
             />
             &nbsp;
-            <a
-              href={`https://github.com/${createdBy}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {createdBy}
-            </a>
+            
+            {createdBy}
           </div>
         ) : null}
         <div className="note-menu" role="menubar">
