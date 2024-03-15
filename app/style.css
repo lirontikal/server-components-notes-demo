@@ -336,6 +336,11 @@ ul.notes-list {
   padding: 16px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+.react-notes-header {
+  display: flex;
+  align-items: center;
 }
 .sidebar-menu {
   padding: 0 16px;
@@ -811,6 +816,10 @@ ul.notes-list {
 .link--unstyled:focus {
   text-decoration: none;
   color: unset;
+}
+
+.logout {
+  font-size: 11px;
 }
 
 @media screen and (max-width: 900px) {

@@ -26,8 +26,8 @@ export default function Sidebar({
     <>
       <input type="checkbox" className="sidebar-toggle" id="sidebar-toggle" />
       <section className="col sidebar">
-        <Link href={'/'} className="link--unstyled">
-          <section className="sidebar-header">
+      <section className="sidebar-header">
+        <Link href={'/'} className="link--unstyled react-notes-header">
             <img
               className="logo"
               src="/logo.svg"
@@ -37,8 +37,11 @@ export default function Sidebar({
               role="presentation"
             />
             <strong>React Notes</strong>
-          </section>
         </Link>
+        <Link href={'/logout'} className="logout">
+          logout
+        </Link>
+        </section>
         <section className="sidebar-menu" role="menubar">
           <SearchField />
           {children}

@@ -8,6 +8,7 @@
     "serve-notes": "json-server -p 3001 ./db.json"
   },
   "dependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@types/node": "^20.8.9",
     "@types/react": "18.2.33",
     "@vercel/kv": "^0.2.3",
