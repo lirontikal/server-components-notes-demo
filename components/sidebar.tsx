@@ -2,7 +2,7 @@
 
 import React, { Suspense } from 'react'
 import Link from 'next/link'
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams, useRouter } from 'next/navigation'
 import SearchField from 'components/search'
 import NoteList from 'components/note-list'
 import NoteListSkeleton from 'components/note-list-skeleton'
@@ -22,6 +22,13 @@ export default function Sidebar({
   children: React.ReactNode
   notes: Note[]
 }) {
+  const router = useRouter();
+
+  const logout = () => {
+    router.push("/logout");
+    router.refresh();
+  }
+  
   return (
     <>
       <input type="checkbox" className="sidebar-toggle" id="sidebar-toggle" />
@@ -38,9 +45,9 @@ export default function Sidebar({
             />
             <strong>React Notes</strong>
         </Link>
-        <Link href={'/logout'} className="logout">
-          logout
-        </Link>
+        <button className="logout-btn" onClick={logout}>
+        logout
+        </button>
         </section>
         <section className="sidebar-menu" role="menubar">
           <SearchField />

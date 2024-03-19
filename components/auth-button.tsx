@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { cookies } from 'next/headers'
 import { getUser, userCookieKey } from 'libs/session'
+import LoginButton from "./login-button"
 
 export default function AuthButton({
   children,
@@ -12,17 +13,13 @@ export default function AuthButton({
   const cookieStore = cookies()
   const userCookie = cookieStore.get(userCookieKey)
   const user = getUser(userCookie?.value)
-  const isDraft = noteId == null
 
   if (user) {
     return (
       // Use hard link
       <a href={`/note/edit/${noteId || ''}`} className="link--unstyled">
         <button
-          className={[
-            'edit-button',
-            isDraft ? 'edit-button--solid' : 'edit-button--outline'
-          ].join(' ')}
+          className="edit-button edit-button--solid"
           role="menuitem"
         >
           {children}
@@ -38,16 +35,6 @@ export default function AuthButton({
   }
 
   return (
-    <Link href="/auth" className="link--unstyled">
-      <button
-        className={[
-          'edit-button',
-          isDraft ? 'edit-button--solid' : 'edit-button--outline'
-        ].join(' ')}
-        role="menuitem"
-      >
-        Login to Add
-      </button>
-    </Link>
+    <LoginButton />
   )
 }
