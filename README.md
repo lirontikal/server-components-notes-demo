@@ -10,7 +10,7 @@ In order to add a note, the user needs to login to the app by clicking the "Logi
 Make the login and logout buttons work correctly.
 
 ### Summary Page Bug 🐛
-The project has a summary page which shows the amount of notes that are saved in the database. In the app's server, there a request that gets the data from the notes-service. This request is configured to revalidate the count every minute. Between the validations, the data is cached. 
+The project has a summary page which shows the amount of notes that are saved in the database. In order to get the data, there's a fetch request to the notes-service. This request is configured to revalidate the count every minute. Between the validations, the data is cached and should not change. 
 
 But, there's a bug - in order to reproduce it, add a new note, checkout the summary page by going to the url `http://localhost:3000/summary` and see that the count is not cached as expected.
 
