@@ -26,7 +26,6 @@ export default function Sidebar({
 
   const logout = () => {
     router.push("/logout");
-    router.refresh();
   }
   
   return (

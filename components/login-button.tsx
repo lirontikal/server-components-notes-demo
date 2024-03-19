@@ -8,7 +8,6 @@ export default function LoginButton() {
   
   const login = () => {
     router.push("/auth");
-    router.refresh();
   }
 
   return (
